@@ -1,13 +1,8 @@
 body {
-  font-size: 2.5vw;
+  margin-top:  4em;
   font-family: sans-serif;
   line-height: 1.5em;
-  padding: 2em;
-  text-align: center;
-}
-
-.blurb {
-  font-size: 2vw;
+  text-align:  center;
 }
 
 a {
