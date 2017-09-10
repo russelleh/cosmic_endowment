@@ -47,12 +47,14 @@ $( document ).ready(function() {
     var accumulative_kwh       = multiply_seconds(kwh);
     var accumulative_watt      = multiply_seconds(watt);
     var accumulative_lifetimes = multiply_seconds(lifetime_per_second_per_person);
-    var chance                 = 1 / accumulative_lifetimes;
-    var wager                  = 1 / lifetime_per_person;
+    var chance                 = 1 / (accumulative_lifetimes / 10e13);
+
+    var chance_text = chance.toFixed(20);
+    var chance_tail = chance_text.slice(2, 22);
+    chance_text = "0.00000000000000" + chance_tail;
 
     $("#volume").text(format(accumulative_kwh));
     $("#lifetimes").text(format(accumulative_lifetimes));
-    $("#chance").text(chance.toFixed(34));
-    $("#wager").text(wager.toFixed(50));
+    $("#chance").text(chance_text);
   }, 16);
 });
