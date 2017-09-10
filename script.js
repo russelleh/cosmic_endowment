@@ -48,13 +48,11 @@ $( document ).ready(function() {
     var accumulative_watt      = multiply_seconds(watt);
     var accumulative_lifetimes = multiply_seconds(lifetime_per_second_per_person);
     var chance                 = 1 / accumulative_lifetimes;
-    var proportion             = accumulative_watt / joule;
     var wager                  = 1 / lifetime_per_person;
 
     $("#volume").text(format(accumulative_kwh));
     $("#lifetimes").text(format(accumulative_lifetimes));
     $("#chance").text(chance.toFixed(34));
-    $("#proportion").text(proportion.toFixed(19));
     $("#wager").text(wager.toFixed(50));
   }, 16);
 });
